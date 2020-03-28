@@ -2,7 +2,7 @@
 <html>
 <head><meta charset="utf-8" />
 
-<title>Statistical_Exercise</title>
+<title>PGPAIML_Residency1_Project2_Statistical_Learning</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -13076,7 +13076,7 @@ div#notebook {
 
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -13090,7 +13090,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">liga</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;Laliga.csv&quot;</span><span class="p">)</span>
@@ -13103,7 +13103,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">liga_replace</span> <span class="o">=</span> <span class="n">liga</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="p">,</span><span class="s1">&#39;0&#39;</span><span class="p">)</span>
@@ -13120,7 +13120,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[7]:</div>
+    <div class="prompt output_prompt">Out[3]:</div>
 
 
 
@@ -14375,7 +14375,7 @@ Name: Points, dtype: int32</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s1">&#39;display.max_rows&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
@@ -14539,7 +14539,7 @@ Name: Points, dtype: int32</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="prompt input_prompt">In&nbsp;[43]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">Goal_diff_count</span><span class="p">(</span><span class="n">frame</span><span class="p">):</span>
@@ -14552,8 +14552,9 @@ Name: Points, dtype: int32</pre>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Liga Max Goal Difference Team is &#39;</span><span class="p">,</span> <span class="nb">format</span><span class="p">(</span><span class="n">liga_GD_Max</span><span class="p">))</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Liga Min Goal Difference Team is &#39;</span><span class="p">,</span> <span class="nb">format</span><span class="p">(</span><span class="n">liga_GD_Min</span><span class="p">))</span>
     
-    <span class="k">for</span> <span class="n">df</span> <span class="ow">in</span> <span class="n">liga_replace</span><span class="o">.</span><span class="n">itertuples</span><span class="p">():</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Liga Team: &#39;</span><span class="p">,</span><span class="nb">format</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span> <span class="o">+</span> <span class="s1">&#39; Goal Difference: &#39;</span><span class="p">,</span> <span class="n">df</span><span class="p">[</span><span class="mi">21</span><span class="p">])</span>    
+    <span class="n">liga_Team_GD</span> <span class="o">=</span> <span class="n">liga_replace</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;Team&#39;</span><span class="p">])[</span><span class="s2">&quot;Team_GD&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span> <span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>
+    <span class="n">liga_Team_GD</span><span class="o">.</span><span class="n">sort_index</span><span class="p">(</span><span class="n">ascending</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">liga_Team_GD</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -14563,7 +14564,7 @@ Name: Points, dtype: int32</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="prompt input_prompt">In&nbsp;[44]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">Goal_diff_count</span><span class="p">(</span><span class="n">liga_replace</span><span class="p">)</span>
@@ -14585,69 +14586,83 @@ Name: Points, dtype: int32</pre>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Liga Max Goal Difference Team is  2807
 Liga Min Goal Difference Team is  -525
-Liga Team:  Real Madrid Goal Difference:  2807
-Liga Team:  Barcelona Goal Difference:  2786
-Liga Team:  Atletico Madrid Goal Difference:  1225
-Liga Team:  Valencia Goal Difference:  929
-Liga Team:  Athletic Bilbao Goal Difference:  931
-Liga Team:  Sevilla Goal Difference:  307
-Liga Team:  Espanyol Goal Difference:  -280
-Liga Team:  Real Sociedad Goal Difference:  -2
-Liga Team:  Zaragoza Goal Difference:  -164
-Liga Team:  Real Betis Goal Difference:  -333
-Liga Team:  Deportivo La Coruna Goal Difference:  -136
-Liga Team:  Celta Vigo Goal Difference:  -346
-Liga Team:  Valladolid Goal Difference:  -413
-Liga Team:  Racing Santander Goal Difference:  -525
-Liga Team:  Sporting Gijon Goal Difference:  -399
-Liga Team:  Osasuna Goal Difference:  -334
-Liga Team:  Malaga Goal Difference:  -342
-Liga Team:  Oviedo Goal Difference:  -309
-Liga Team:  Mallorca Goal Difference:  -189
-Liga Team:  Las Palmas Goal Difference:  -399
-Liga Team:  Villarreal Goal Difference:  103
-Liga Team:  Granada Goal Difference:  -338
-Liga Team:  Rayo Vallecano Goal Difference:  -328
-Liga Team:  Elche Goal Difference:  -272
-Liga Team:  Getafe Goal Difference:  -113
-Liga Team:  Hercules Goal Difference:  -334
-Liga Team:  Tenerife Goal Difference:  -125
-Liga Team:  Murcia Goal Difference:  -385
-Liga Team:  Alaves Goal Difference:  -165
-Liga Team:  Levante Goal Difference:  -202
-Liga Team:  Salamanca Goal Difference:  -159
-Liga Team:  Sabadell Goal Difference:  -228
-Liga Team:  Cadiz Goal Difference:  -269
-Liga Team:  Logrones Goal Difference:  -198
-Liga Team:  Castellon Goal Difference:  -169
-Liga Team:  Albacete Goal Difference:  -90
-Liga Team:  Almeria Goal Difference:  -122
-Liga Team:  Cordoba Goal Difference:  -145
-Liga Team:  Compostela Goal Difference:  -42
-Liga Team:  Recreativo Goal Difference:  -94
-Liga Team:  Burgos CF Goal Difference:  -94
-Liga Team:  Pontevedra Goal Difference:  -56
-Liga Team:  Numancia Goal Difference:  -98
-Liga Team:  Eibar Goal Difference:  -28
-Liga Team:  Arenas Goal Difference:  -81
-Liga Team:  Real Burgos Goal Difference:  -38
-Liga Team:  Gimnastic Goal Difference:  -114
-Liga Team:  Extremadura Goal Difference:  -55
-Liga Team:  Merida Goal Difference:  -45
-Liga Team:  Alcoyano Goal Difference:  -107
-Liga Team:  Jaen Goal Difference:  -62
-Liga Team:  Real Union Goal Difference:  -31
-Liga Team:  AD Almeria Goal Difference:  -45
-Liga Team:  Europa Goal Difference:  -34
-Liga Team:  Lleida Goal Difference:  -112
-Liga Team:  Leganes Goal Difference:  -19
-Liga Team:  Xerez Goal Difference:  -28
-Liga Team:  Condal Goal Difference:  -20
-Liga Team:  Atletico Tetuan Goal Difference:  -34
-Liga Team:  Cultural Leonesa Goal Difference:  -31
-Liga Team:  Girona Goal Difference:  0
 </pre>
 </div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[44]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>Team
+AD Almeria            -45  
+Alaves                -165 
+Albacete              -90  
+Alcoyano              -107 
+Almeria               -122 
+Arenas                -81  
+Athletic Bilbao        931 
+Atletico Madrid        1225
+Atletico Tetuan       -34  
+Barcelona              2786
+Burgos CF             -94  
+Cadiz                 -269 
+Castellon             -169 
+Celta Vigo            -346 
+Compostela            -42  
+Condal                -20  
+Cordoba               -145 
+Cultural Leonesa      -31  
+Deportivo La Coruna   -136 
+Eibar                 -28  
+Elche                 -272 
+Espanyol              -280 
+Europa                -34  
+Extremadura           -55  
+Getafe                -113 
+Gimnastic             -114 
+Girona                 0   
+Granada               -338 
+Hercules              -334 
+Jaen                  -62  
+Las Palmas            -399 
+Leganes               -19  
+Levante               -202 
+Lleida                -112 
+Logrones              -198 
+Malaga                -342 
+Mallorca              -189 
+Merida                -45  
+Murcia                -385 
+Numancia              -98  
+Osasuna               -334 
+Oviedo                -309 
+Pontevedra            -56  
+Racing Santander      -525 
+Rayo Vallecano        -328 
+Real Betis            -333 
+Real Burgos           -38  
+Real Madrid            2807
+Real Sociedad         -2   
+Real Union            -31  
+Recreativo            -94  
+Sabadell              -228 
+Salamanca             -159 
+Sevilla                307 
+Sporting Gijon        -399 
+Tenerife              -125 
+Valencia               929 
+Valladolid            -413 
+Villarreal             103 
+Xerez                 -28  
+Zaragoza              -164 
+Name: Team_GD, dtype: int64</pre>
+</div>
+
 </div>
 
 </div>
