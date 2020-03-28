@@ -13076,7 +13076,7 @@ div#notebook {
 
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -13090,7 +13090,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">liga</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;Laliga.csv&quot;</span><span class="p">)</span>
@@ -13103,7 +13103,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">liga_replace</span> <span class="o">=</span> <span class="n">liga</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="p">,</span><span class="s1">&#39;0&#39;</span><span class="p">)</span>
@@ -13120,7 +13120,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[3]:</div>
+    <div class="prompt output_prompt">Out[5]:</div>
 
 
 
@@ -14375,7 +14375,7 @@ Name: Points, dtype: int32</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="prompt input_prompt">In&nbsp;[50]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s1">&#39;display.max_rows&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
@@ -14539,7 +14539,7 @@ Name: Points, dtype: int32</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[43]:</div>
+<div class="prompt input_prompt">In&nbsp;[99]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">Goal_diff_count</span><span class="p">(</span><span class="n">frame</span><span class="p">):</span>
@@ -14553,8 +14553,8 @@ Name: Points, dtype: int32</pre>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Liga Min Goal Difference Team is &#39;</span><span class="p">,</span> <span class="nb">format</span><span class="p">(</span><span class="n">liga_GD_Min</span><span class="p">))</span>
     
     <span class="n">liga_Team_GD</span> <span class="o">=</span> <span class="n">liga_replace</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;Team&#39;</span><span class="p">])[</span><span class="s2">&quot;Team_GD&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span> <span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>
-    <span class="n">liga_Team_GD</span><span class="o">.</span><span class="n">sort_index</span><span class="p">(</span><span class="n">ascending</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-    <span class="k">return</span> <span class="p">(</span><span class="n">liga_Team_GD</span><span class="p">)</span>
+    <span class="n">Team_GD</span> <span class="o">=</span> <span class="n">liga_Team_GD</span><span class="o">.</span><span class="n">sort_index</span><span class="p">(</span><span class="n">ascending</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">Team_GD</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -14564,7 +14564,7 @@ Name: Points, dtype: int32</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[44]:</div>
+<div class="prompt input_prompt">In&nbsp;[100]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">Goal_diff_count</span><span class="p">(</span><span class="n">liga_replace</span><span class="p">)</span>
@@ -14592,7 +14592,7 @@ Liga Min Goal Difference Team is  -525
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[44]:</div>
+    <div class="prompt output_prompt">Out[100]:</div>
 
 
 
@@ -14671,7 +14671,20 @@ Name: Team_GD, dtype: int64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[17]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[94]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">liga_replace</span><span class="p">[</span><span class="s2">&quot;WinningPercent&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">((</span><span class="n">liga_replace</span><span class="p">[</span><span class="s2">&quot;GamesWon&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span> <span class="o">/</span> <span class="n">liga_replace</span><span class="p">[</span><span class="s2">&quot;GamesPlayed&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">))</span><span class="o">/</span><span class="mi">100</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
@@ -14688,7 +14701,7 @@ Name: Team_GD, dtype: int64</pre>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[17]:</div>
+    <div class="prompt output_prompt">Out[94]:</div>
 
 
 
@@ -14731,7 +14744,6 @@ Name: Team_GD, dtype: int64</pre>
       <th>Debut</th>
       <th>Since/LastApp</th>
       <th>BestPosition</th>
-      <th>Team_GD</th>
       <th>WinningPercent</th>
     </tr>
   </thead>
@@ -14758,7 +14770,6 @@ Name: Team_GD, dtype: int64</pre>
       <td>1929</td>
       <td>1929</td>
       <td>1</td>
-      <td>2807</td>
       <td>0.005963</td>
     </tr>
     <tr>
@@ -14783,7 +14794,6 @@ Name: Team_GD, dtype: int64</pre>
       <td>1929</td>
       <td>1929</td>
       <td>1</td>
-      <td>2786</td>
       <td>0.005724</td>
     </tr>
     <tr>
@@ -14808,7 +14818,6 @@ Name: Team_GD, dtype: int64</pre>
       <td>1929</td>
       <td>2002-03</td>
       <td>1</td>
-      <td>1225</td>
       <td>0.004748</td>
     </tr>
     <tr>
@@ -14833,7 +14842,6 @@ Name: Team_GD, dtype: int64</pre>
       <td>1931-32</td>
       <td>1987-88</td>
       <td>1</td>
-      <td>929</td>
       <td>0.004456</td>
     </tr>
     <tr>
@@ -14858,7 +14866,6 @@ Name: Team_GD, dtype: int64</pre>
       <td>1929</td>
       <td>1929</td>
       <td>1</td>
-      <td>931</td>
       <td>0.004377</td>
     </tr>
     <tr>
@@ -14883,7 +14890,6 @@ Name: Team_GD, dtype: int64</pre>
       <td>1934-35</td>
       <td>2001-02</td>
       <td>1</td>
-      <td>307</td>
       <td>0.004111</td>
     </tr>
     <tr>
@@ -14908,7 +14914,6 @@ Name: Team_GD, dtype: int64</pre>
       <td>1929</td>
       <td>1994-95</td>
       <td>3</td>
-      <td>-280</td>
       <td>0.003610</td>
     </tr>
     <tr>
@@ -14933,7 +14938,6 @@ Name: Team_GD, dtype: int64</pre>
       <td>1929</td>
       <td>2010-11</td>
       <td>1</td>
-      <td>-2</td>
       <td>0.003753</td>
     </tr>
     <tr>
@@ -14958,7 +14962,6 @@ Name: Team_GD, dtype: int64</pre>
       <td>1939-40</td>
       <td>2012-13</td>
       <td>2</td>
-      <td>-164</td>
       <td>0.003515</td>
     </tr>
     <tr>
@@ -14983,7 +14986,6 @@ Name: Team_GD, dtype: int64</pre>
       <td>1932-33</td>
       <td>2015-16</td>
       <td>1</td>
-      <td>-333</td>
       <td>0.003507</td>
     </tr>
     <tr>
@@ -15008,7 +15010,6 @@ Name: Team_GD, dtype: int64</pre>
       <td>1941-42</td>
       <td>2014-15</td>
       <td>1</td>
-      <td>-136</td>
       <td>0.003680</td>
     </tr>
     <tr>
@@ -15033,7 +15034,6 @@ Name: Team_GD, dtype: int64</pre>
       <td>1939-40</td>
       <td>2012-13</td>
       <td>4</td>
-      <td>-346</td>
       <td>0.003451</td>
     </tr>
     <tr>
@@ -15058,7 +15058,6 @@ Name: Team_GD, dtype: int64</pre>
       <td>1948-49</td>
       <td>2013-14</td>
       <td>4</td>
-      <td>-413</td>
       <td>0.003158</td>
     </tr>
     <tr>
@@ -15083,7 +15082,6 @@ Name: Team_GD, dtype: int64</pre>
       <td>1929</td>
       <td>2011-12</td>
       <td>2</td>
-      <td>-525</td>
       <td>0.003172</td>
     </tr>
     <tr>
@@ -15108,7 +15106,6 @@ Name: Team_GD, dtype: int64</pre>
       <td>1944-45</td>
       <td>2015-16</td>
       <td>2</td>
-      <td>-399</td>
       <td>0.003230</td>
     </tr>
     <tr>
@@ -15133,7 +15130,6 @@ Name: Team_GD, dtype: int64</pre>
       <td>1935-36</td>
       <td>2016-17</td>
       <td>4</td>
-      <td>-334</td>
       <td>0.003232</td>
     </tr>
     <tr>
@@ -15158,7 +15154,6 @@ Name: Team_GD, dtype: int64</pre>
       <td>1949-50</td>
       <td>2008-09</td>
       <td>4</td>
-      <td>-342</td>
       <td>0.003108</td>
     </tr>
     <tr>
@@ -15183,7 +15178,6 @@ Name: Team_GD, dtype: int64</pre>
       <td>1933-34</td>
       <td>2000-01</td>
       <td>3</td>
-      <td>-309</td>
       <td>0.003423</td>
     </tr>
     <tr>
@@ -15208,7 +15202,6 @@ Name: Team_GD, dtype: int64</pre>
       <td>1960-61</td>
       <td>2012-13</td>
       <td>3</td>
-      <td>-189</td>
       <td>0.003370</td>
     </tr>
     <tr>
@@ -15233,7 +15226,6 @@ Name: Team_GD, dtype: int64</pre>
       <td>1951-52</td>
       <td>2015-16</td>
       <td>2</td>
-      <td>-399</td>
       <td>0.003349</td>
     </tr>
     <tr>
@@ -15258,7 +15250,6 @@ Name: Team_GD, dtype: int64</pre>
       <td>1998-99</td>
       <td>2013-14</td>
       <td>2</td>
-      <td>103</td>
       <td>0.004118</td>
     </tr>
     <tr>
@@ -15283,7 +15274,6 @@ Name: Team_GD, dtype: int64</pre>
       <td>1941-42</td>
       <td>2016-17</td>
       <td>6</td>
-      <td>-338</td>
       <td>0.002938</td>
     </tr>
     <tr>
@@ -15308,7 +15298,6 @@ Name: Team_GD, dtype: int64</pre>
       <td>1977-78</td>
       <td>2015-16</td>
       <td>8</td>
-      <td>-328</td>
       <td>0.002899</td>
     </tr>
     <tr>
@@ -15333,7 +15322,6 @@ Name: Team_GD, dtype: int64</pre>
       <td>1959-60</td>
       <td>2014-15</td>
       <td>5</td>
-      <td>-272</td>
       <td>0.002994</td>
     </tr>
     <tr>
@@ -15358,7 +15346,6 @@ Name: Team_GD, dtype: int64</pre>
       <td>2004-05</td>
       <td>2015-16</td>
       <td>6</td>
-      <td>-113</td>
       <td>0.003224</td>
     </tr>
     <tr>
@@ -15383,7 +15370,6 @@ Name: Team_GD, dtype: int64</pre>
       <td>1935-36</td>
       <td>2010-11</td>
       <td>5</td>
-      <td>-334</td>
       <td>0.002930</td>
     </tr>
     <tr>
@@ -15408,7 +15394,6 @@ Name: Team_GD, dtype: int64</pre>
       <td>1961-62</td>
       <td>2009-10</td>
       <td>5</td>
-      <td>-125</td>
       <td>0.003138</td>
     </tr>
     <tr>
@@ -15433,7 +15418,6 @@ Name: Team_GD, dtype: int64</pre>
       <td>1940-41</td>
       <td>2007-08</td>
       <td>11</td>
-      <td>-385</td>
       <td>0.002474</td>
     </tr>
     <tr>
@@ -15458,7 +15442,6 @@ Name: Team_GD, dtype: int64</pre>
       <td>1930-31</td>
       <td>2016-17</td>
       <td>6</td>
-      <td>-165</td>
       <td>0.003289</td>
     </tr>
     <tr>
@@ -15483,7 +15466,6 @@ Name: Team_GD, dtype: int64</pre>
       <td>1963-64</td>
       <td>2015-16</td>
       <td>6</td>
-      <td>-202</td>
       <td>0.002811</td>
     </tr>
     <tr>
@@ -15508,7 +15490,6 @@ Name: Team_GD, dtype: int64</pre>
       <td>1974-75</td>
       <td>1998-99</td>
       <td>7</td>
-      <td>-159</td>
       <td>0.002908</td>
     </tr>
     <tr>
@@ -15533,7 +15514,6 @@ Name: Team_GD, dtype: int64</pre>
       <td>1943-44</td>
       <td>1987-88</td>
       <td>4</td>
-      <td>-228</td>
       <td>0.003028</td>
     </tr>
     <tr>
@@ -15558,7 +15538,6 @@ Name: Team_GD, dtype: int64</pre>
       <td>1977-78</td>
       <td>2005-06</td>
       <td>12</td>
-      <td>-269</td>
       <td>0.002321</td>
     </tr>
     <tr>
@@ -15583,7 +15562,6 @@ Name: Team_GD, dtype: int64</pre>
       <td>1987-88</td>
       <td>1996-97</td>
       <td>7</td>
-      <td>-198</td>
       <td>0.002775</td>
     </tr>
     <tr>
@@ -15608,7 +15586,6 @@ Name: Team_GD, dtype: int64</pre>
       <td>1941-42</td>
       <td>1990-91</td>
       <td>4</td>
-      <td>-169</td>
       <td>0.003084</td>
     </tr>
     <tr>
@@ -15633,7 +15610,6 @@ Name: Team_GD, dtype: int64</pre>
       <td>1991-92</td>
       <td>2004-05</td>
       <td>7</td>
-      <td>-90</td>
       <td>0.002815</td>
     </tr>
     <tr>
@@ -15658,7 +15634,6 @@ Name: Team_GD, dtype: int64</pre>
       <td>2007-08</td>
       <td>2014-15</td>
       <td>8</td>
-      <td>-122</td>
       <td>0.002719</td>
     </tr>
     <tr>
@@ -15683,7 +15658,6 @@ Name: Team_GD, dtype: int64</pre>
       <td>1962-63</td>
       <td>2014-15</td>
       <td>5</td>
-      <td>-145</td>
       <td>0.002908</td>
     </tr>
     <tr>
@@ -15708,7 +15682,6 @@ Name: Team_GD, dtype: int64</pre>
       <td>1994-95</td>
       <td>1997-98</td>
       <td>10</td>
-      <td>-42</td>
       <td>0.003250</td>
     </tr>
     <tr>
@@ -15733,7 +15706,6 @@ Name: Team_GD, dtype: int64</pre>
       <td>1978-79</td>
       <td>2008-09</td>
       <td>8</td>
-      <td>-94</td>
       <td>0.002688</td>
     </tr>
     <tr>
@@ -15758,7 +15730,6 @@ Name: Team_GD, dtype: int64</pre>
       <td>1971-72</td>
       <td>1979-80</td>
       <td>12</td>
-      <td>-94</td>
       <td>0.002892</td>
     </tr>
     <tr>
@@ -15783,7 +15754,6 @@ Name: Team_GD, dtype: int64</pre>
       <td>1963-64</td>
       <td>1969-70</td>
       <td>7</td>
-      <td>-56</td>
       <td>0.002944</td>
     </tr>
     <tr>
@@ -15808,7 +15778,6 @@ Name: Team_GD, dtype: int64</pre>
       <td>1999-00</td>
       <td>2008-09</td>
       <td>17</td>
-      <td>-98</td>
       <td>0.002434</td>
     </tr>
     <tr>
@@ -15833,7 +15802,6 @@ Name: Team_GD, dtype: int64</pre>
       <td>2014-15</td>
       <td>2014-15</td>
       <td>10</td>
-      <td>-28</td>
       <td>0.003070</td>
     </tr>
     <tr>
@@ -15858,7 +15826,6 @@ Name: Team_GD, dtype: int64</pre>
       <td>1929</td>
       <td>1934-35</td>
       <td>3</td>
-      <td>-81</td>
       <td>0.003308</td>
     </tr>
     <tr>
@@ -15883,7 +15850,6 @@ Name: Team_GD, dtype: int64</pre>
       <td>1990-91</td>
       <td>1992-93</td>
       <td>9</td>
-      <td>-38</td>
       <td>0.002281</td>
     </tr>
     <tr>
@@ -15908,7 +15874,6 @@ Name: Team_GD, dtype: int64</pre>
       <td>1947-48</td>
       <td>2006-07</td>
       <td>7</td>
-      <td>-114</td>
       <td>0.002931</td>
     </tr>
     <tr>
@@ -15933,7 +15898,6 @@ Name: Team_GD, dtype: int64</pre>
       <td>1996-97</td>
       <td>1998-99</td>
       <td>17</td>
-      <td>-55</td>
       <td>0.002500</td>
     </tr>
     <tr>
@@ -15958,7 +15922,6 @@ Name: Team_GD, dtype: int64</pre>
       <td>1995-96</td>
       <td>1997-98</td>
       <td>19</td>
-      <td>-45</td>
       <td>0.002375</td>
     </tr>
     <tr>
@@ -15983,7 +15946,6 @@ Name: Team_GD, dtype: int64</pre>
       <td>1945-46</td>
       <td>1950-51</td>
       <td>10</td>
-      <td>-107</td>
       <td>0.002778</td>
     </tr>
     <tr>
@@ -16008,7 +15970,6 @@ Name: Team_GD, dtype: int64</pre>
       <td>1953-54</td>
       <td>1957-58</td>
       <td>14</td>
-      <td>-62</td>
       <td>0.003222</td>
     </tr>
     <tr>
@@ -16033,7 +15994,6 @@ Name: Team_GD, dtype: int64</pre>
       <td>1929</td>
       <td>1931-32</td>
       <td>6</td>
-      <td>-31</td>
       <td>0.002917</td>
     </tr>
     <tr>
@@ -16058,7 +16018,6 @@ Name: Team_GD, dtype: int64</pre>
       <td>1979-80</td>
       <td>1980-81</td>
       <td>10</td>
-      <td>-45</td>
       <td>0.002500</td>
     </tr>
     <tr>
@@ -16083,7 +16042,6 @@ Name: Team_GD, dtype: int64</pre>
       <td>1929</td>
       <td>1930-31</td>
       <td>8</td>
-      <td>-34</td>
       <td>0.003333</td>
     </tr>
     <tr>
@@ -16108,7 +16066,6 @@ Name: Team_GD, dtype: int64</pre>
       <td>1950-51</td>
       <td>1993-94</td>
       <td>16</td>
-      <td>-112</td>
       <td>0.001912</td>
     </tr>
     <tr>
@@ -16133,7 +16090,6 @@ Name: Team_GD, dtype: int64</pre>
       <td>2016-17</td>
       <td>2016-17</td>
       <td>17</td>
-      <td>-19</td>
       <td>0.002105</td>
     </tr>
     <tr>
@@ -16158,7 +16114,6 @@ Name: Team_GD, dtype: int64</pre>
       <td>2009-10</td>
       <td>2009-10</td>
       <td>20</td>
-      <td>-28</td>
       <td>0.002105</td>
     </tr>
     <tr>
@@ -16183,7 +16138,6 @@ Name: Team_GD, dtype: int64</pre>
       <td>1956-57</td>
       <td>1956-57</td>
       <td>16</td>
-      <td>-20</td>
       <td>0.002333</td>
     </tr>
     <tr>
@@ -16208,7 +16162,6 @@ Name: Team_GD, dtype: int64</pre>
       <td>1951-52</td>
       <td>1951-52</td>
       <td>16</td>
-      <td>-34</td>
       <td>0.002333</td>
     </tr>
     <tr>
@@ -16233,7 +16186,6 @@ Name: Team_GD, dtype: int64</pre>
       <td>1955-56</td>
       <td>1955-56</td>
       <td>15</td>
-      <td>-31</td>
       <td>0.001667</td>
     </tr>
     <tr>
@@ -16258,7 +16210,6 @@ Name: Team_GD, dtype: int64</pre>
       <td>2017-18</td>
       <td>2017-18</td>
       <td>9</td>
-      <td>0</td>
       <td>0.000000</td>
     </tr>
   </tbody>
@@ -16274,7 +16225,7 @@ Name: Team_GD, dtype: int64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[459]:</div>
+<div class="prompt input_prompt">In&nbsp;[95]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">liga_replace</span><span class="o">.</span><span class="n">nlargest</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;WinningPercent&#39;</span><span class="p">)</span>
@@ -16290,7 +16241,7 @@ Name: Team_GD, dtype: int64</pre>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[459]:</div>
+    <div class="prompt output_prompt">Out[95]:</div>
 
 
 
@@ -16333,7 +16284,6 @@ Name: Team_GD, dtype: int64</pre>
       <th>Debut</th>
       <th>Since/LastApp</th>
       <th>BestPosition</th>
-      <th>Team_GD</th>
       <th>WinningPercent</th>
     </tr>
   </thead>
@@ -16360,7 +16310,6 @@ Name: Team_GD, dtype: int64</pre>
       <td>1929</td>
       <td>1929</td>
       <td>1</td>
-      <td>2807</td>
       <td>0.005963</td>
     </tr>
     <tr>
@@ -16385,7 +16334,6 @@ Name: Team_GD, dtype: int64</pre>
       <td>1929</td>
       <td>1929</td>
       <td>1</td>
-      <td>2786</td>
       <td>0.005724</td>
     </tr>
     <tr>
@@ -16410,7 +16358,6 @@ Name: Team_GD, dtype: int64</pre>
       <td>1929</td>
       <td>2002-03</td>
       <td>1</td>
-      <td>1225</td>
       <td>0.004748</td>
     </tr>
     <tr>
@@ -16435,7 +16382,6 @@ Name: Team_GD, dtype: int64</pre>
       <td>1931-32</td>
       <td>1987-88</td>
       <td>1</td>
-      <td>929</td>
       <td>0.004456</td>
     </tr>
     <tr>
@@ -16460,7 +16406,6 @@ Name: Team_GD, dtype: int64</pre>
       <td>1929</td>
       <td>1929</td>
       <td>1</td>
-      <td>931</td>
       <td>0.004377</td>
     </tr>
   </tbody>
@@ -16476,11 +16421,11 @@ Name: Team_GD, dtype: int64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[54]:</div>
+<div class="prompt input_prompt">In&nbsp;[98]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">liga_groupby5</span> <span class="o">=</span> <span class="n">liga_replace</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;BestPosition&#39;</span><span class="p">])[</span><span class="s2">&quot;Points&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span> <span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>
-<span class="n">liga_groupby5</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">liga_group_points</span> <span class="o">=</span> <span class="n">liga_replace</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;BestPosition&#39;</span><span class="p">])[</span><span class="s1">&#39;Points&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span> <span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>
+<span class="n">liga_group_points</span>
 </pre></div>
 
     </div>
@@ -16493,7 +16438,7 @@ Name: Team_GD, dtype: int64</pre>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[54]:</div>
+    <div class="prompt output_prompt">Out[98]:</div>
 
 
 
@@ -16519,6 +16464,181 @@ Name: Team_GD, dtype: int64</pre>
 19    81   
 20    34   
 Name: Points, dtype: int64</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[92]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">liga_replace</span><span class="p">[</span><span class="s1">&#39;Points&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">liga_replace</span><span class="p">[</span><span class="s1">&#39;Points&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+<span class="n">liga_groupby5</span> <span class="o">=</span> <span class="n">liga_replace</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;BestPosition&#39;</span><span class="p">])[</span><span class="s1">&#39;Team&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span>
+<span class="n">liga_groupby_points</span> <span class="o">=</span> <span class="n">liga_replace</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;BestPosition&#39;</span><span class="p">)[</span><span class="s1">&#39;Points&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">agg</span><span class="p">([</span><span class="s2">&quot;sum&quot;</span><span class="p">,</span><span class="s2">&quot;count&quot;</span><span class="p">])</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">liga_groupby5</span><span class="p">,</span><span class="n">liga_groupby_points</span><span class="p">,</span> <span class="n">on</span> <span class="o">=</span> <span class="s1">&#39;BestPosition&#39;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[92]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Team</th>
+      <th>sum</th>
+      <th>count</th>
+    </tr>
+    <tr>
+      <th>BestPosition</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>[Real Madrid, Barcelona, Atletico Madrid, Valencia, Athletic Bilbao, Sevilla, Real Sociedad, Real Betis, Deportivo La Coruna]</td>
+      <td>27933</td>
+      <td>9</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>[Zaragoza, Racing Santander, Sporting Gijon, Las Palmas, Villarreal]</td>
+      <td>6904</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>[Espanyol, Oviedo, Mallorca, Arenas]</td>
+      <td>5221</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>[Celta Vigo, Valladolid, Osasuna, Malaga, Sabadell, Castellon]</td>
+      <td>6563</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>[Elche, Hercules, Tenerife, Cordoba]</td>
+      <td>1884</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>[Granada, Getafe, Alaves, Levante, Real Union]</td>
+      <td>2113</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>[Salamanca, Logrones, Albacete, Pontevedra, Gimnastic]</td>
+      <td>1186</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td>[Rayo Vallecano, Almeria, Recreativo, Europa]</td>
+      <td>1134</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td>[Real Burgos, Girona]</td>
+      <td>96</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td>[Compostela, Eibar, Alcoyano, AD Almeria]</td>
+      <td>450</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <td>11</td>
+      <td>[Murcia]</td>
+      <td>445</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>12</td>
+      <td>[Cadiz, Burgos CF]</td>
+      <td>511</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>14</td>
+      <td>[Jaen]</td>
+      <td>71</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>15</td>
+      <td>[Cultural Leonesa]</td>
+      <td>14</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>16</td>
+      <td>[Lleida, Condal, Atletico Tetuan]</td>
+      <td>81</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>17</td>
+      <td>[Numancia, Extremadura, Leganes]</td>
+      <td>266</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>19</td>
+      <td>[Merida]</td>
+      <td>81</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>20</td>
+      <td>[Xerez]</td>
+      <td>34</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+</div>
 </div>
 
 </div>
